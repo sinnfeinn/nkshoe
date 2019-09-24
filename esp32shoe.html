@@ -129,7 +129,7 @@
 
 					// ASCII file
 					var loader = new THREE.STLLoader();
-					loader.load( './ascii/edit3.stl', function ( geometry ) {
+					loader.load( './ascii/SHOE_STL.stl', function ( geometry ) {
 					var material = new THREE.MeshPhongMaterial( { color: 0x73D04E, specular: 0x444444, shininess: 40, wireframe: true, flatShading: false, depthWrite: true, clipIntersection: false } );
 					var mesh = new THREE.Mesh( geometry, material );
 					mesh.position.set( 0, -0.2, 0 );
