@@ -22,6 +22,7 @@ Showing position and flex of a shoe wireless in realtime on the web using:
 --- Moment JS (https://momentjs.com/)</br>
 --- Chart JS (https://www.chartjs.org/)</br>
 --- Chart Streaming Plugin (https://nagix.github.io/chartjs-plugin-streaming/)</br>
+--- Free stl show model (https://sketchfab.com/3d-models/shoe-stl-8bc37802b11240f6bad3bb3b60e682ae#download)
 </br>
 </br>
 1.) Install Arduino IDE and follow the instructions to setup the esp32 feather board:
@@ -37,6 +38,8 @@ https://learn.adafruit.com/adafruit-huzzah32-esp32-feather/using-with-arduino-id
 </br>
 6.) Make sure you and the shoe are in the same Wifi network. 
 </br>
-7.) Open esp32shoe.html 
+7.) Download a free stl model of a shoe and place it in the ascii folder. (https://sketchfab.com/3d-models/shoe-stl-8bc37802b11240f6bad3bb3b60e682ae)
 </br>
-8.) Check  developertools/network/ws for websocket connections.
+8.) Open esp32shoe.html 
+</br>
+9.) Check  developertools/network/ws for websocket connections.
