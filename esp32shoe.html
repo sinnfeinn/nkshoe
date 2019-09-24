@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>NKS_WHQ_NS</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>
+			body {
+				font-family: Futura;
+				background-color: #000000;
+				margin: 0px;
+				overflow: hidden;
+			}
+			#info {
+				color: #fff;
+				position: absolute;
+				top: 10px;
+				width: 100%;
+				text-align: center;
+				z-index: 100;
+				display:block;
+			}
+			a { color: skyblue }
+			.button { background:#999; color:#eee; padding:0.2em 0.5em; cursor:pointer }
+			.highlight { background:orange; color:#fff; }
+			span {
+				display: inline-block;
+				width: 60px;
+				text-align: center;
+			}
+			pre {
+			    display: block;
+					font-family: Futura;
+					margin-left: 12em;
+					color: white;
+					font-size: 13pt;
+					margin: 0px;
+					margin-left: 115px;
+			}
+			p {
+				font-family: Futura;
+				font-size: 13pt;
+				background-color: #000000;
+				margin: 0px;
+				overflow: hidden;
+				margin-left: 115px;
+				color: white;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div id="info">
+		<div class="chart-container" style="position: relative; height:10vh; width:50vw">
+		    <canvas id="myChart"></canvas>
+		</div>
+		</div>
+
+		<script src="./build/three.js"></script>
+
+		<script src="./jsm/loaders/STLLoader.js"></script>
+
+		<script src="./WebGL.js"></script>
+
+		<script src="./moment.min.js"></script>
+		<script src="./Chart.min.js"></script>
+		<script src="./chartjs-plugin-streaming.min.js"></script>
+
+		<script src="./STLLoader.js"></script>
+
+		<script src="./stats.min.js"></script>
+
+
+		<script>
+			function WebSocketBegin() {
+				if ( WEBGL.isWebGLAvailable() === false ) {
+					document.body.appendChild( WEBGL.getWebGLErrorMessage() );
+				}
+				var container, stats;
+				var camera, cameraTarget, scene, renderer;
+
+				init();
+				animate();
+
+				function init() {
+					container = document.createElement( 'div' );
+					document.body.appendChild( container );
+					camera = new THREE.PerspectiveCamera( 35, window.innerWidth / window.innerHeight, 1, 15 );
+					camera.position.set( 3, 0.15, 3 );
+					cameraTarget = new THREE.Vector3( 0, - 0.25, 0 );
+					scene = new THREE.Scene();
+					scene.background = new THREE.Color( 0x1e2725 );
+					scene.fog = new THREE.Fog( 0x32413e, 2, 15 );
+					// Ground
+					var plane = new THREE.Mesh(
+						new THREE.PlaneBufferGeometry( 40, 40 ),
+						new THREE.MeshPhongMaterial( { color: 0x999999, specular: 0x101010 } )
+					);
+					plane.rotation.x = - Math.PI / 2;
+					plane.position.y = - 0.5;
+					scene.add( plane );
+					plane.receiveShadow = true;
+
+
+					// ASCII file
+					var loader = new THREE.STLLoader();
+					loader.load( './ascii/edit3.stl', function ( geometry ) {
+					var material = new THREE.MeshPhongMaterial( { color: 0x73D04E, specular: 0x444444, shininess: 40, wireframe: true, flatShading: false, depthWrite: true, clipIntersection: false } );
+					var mesh = new THREE.Mesh( geometry, material );
+					mesh.position.set( 0, 0, 0 );
+					mesh.rotation.set( 0, 0, 0 );
+					mesh.scale.set( 0.2, 0.2, 0.2 );
+					mesh.castShadow = true;
+					mesh.receiveShadow = true;
+					scene.add( mesh );
+
+				//Begin inserted code
+							if ("WebSocket" in window) {
+								// Let us open a web socket
+								ws = new WebSocket("ws://192.168.1.176/ws");
+								// ws = new WebSocket(
+								//   "wss://fc94f91f5992989f83474cc8abf7329b-8001.husarnetusers.com"
+								// );
+								ws.onopen = function() {
+									// Web Socket is connected
+								};
+								ws.onmessage = function(evt) {
+									//create a JSON object
+									var jsonObject = JSON.parse(evt.data);
+									var qReal = jsonObject.q0;
+									var qI = jsonObject.q1;
+									var qJ = jsonObject.q2;
+									var qK = jsonObject.q3;
+									//var quat1 = new THREE.Quaternion(qI, qJ, qK, qReal);
+									//var quat2 = new THREE.Quaternion(1, 0, 0, 0);
+
+
+									var quat1 = new THREE.Quaternion(qReal, qI, qJ, qK);
+									//quat1.setFromAxisAngle( new THREE.Vector3( 0, 1, 0 ), Math.PI / 2 );
+									//var quat2 = new THREE.Vector3( 1, 0, 0 );
+									var quat2 = new THREE.Quaternion(1, 0, 0, 0);
+									mesh.quaternion.multiplyQuaternions(quat1, quat2);
+
+									//var quaternion = new THREE.Quaternion(qI, qJ, qK, qReal); quaternion.setFromAxisAngle( new THREE.Vector3( 0, 1, 0 ), Math.PI / 2 );
+									//var vector = new THREE.Vector3( 1, 0, 0 ); vector.applyQuaternion( quaternion );
+
+
+
+									//var vector = new THREE.Vector3( 1, 0, 0 );
+									//vector.applyQuaternion( quaternion );
+
+								};
+								ws.onclose = function() {
+									// websocket is closed.
+									alert("Connection is closed...");
+								};
+							} else {
+								// The browser doesn't support WebSocket
+								alert("WebSocket not supported by your Browser!");
+							}
+
+			//End inserted code
+
+				} );
+				// Lights
+				scene.add( new THREE.HemisphereLight( 0x443333, 0x111122 ) );
+				addShadowedLight( 1, 1, 1, 0xffffff, 1.35 );
+				addShadowedLight( 0.5, 1, - 1, 0xfffc54, 1 );
+				// renderer
+				renderer = new THREE.WebGLRenderer( { antialias: false } );
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				renderer.gammaInput = false;
+				renderer.gammaOutput = true;
+				renderer.shadowMap.enabled = true;
+				container.appendChild( renderer.domElement );
+				// stats
+				//stats = new Stats();
+				//container.appendChild( stats.dom );
+				//
+				window.addEventListener( 'resize', onWindowResize, false );
+			}
+
+			function addShadowedLight( x, y, z, color, intensity ) {
+				var directionalLight = new THREE.DirectionalLight( color, intensity );
+				directionalLight.position.set( x, y, z );
+				scene.add( directionalLight );
+				directionalLight.castShadow = true;
+				var d = 1;
+				directionalLight.shadow.camera.left = - d;
+				directionalLight.shadow.camera.right = d;
+				directionalLight.shadow.camera.top = d;
+				directionalLight.shadow.camera.bottom = - d;
+				directionalLight.shadow.camera.near = 1;
+				directionalLight.shadow.camera.far = 4;
+				directionalLight.shadow.mapSize.width = 1024;
+				directionalLight.shadow.mapSize.height = 1024;
+				directionalLight.shadow.bias = - 0.002;
+			}
+			function onWindowResize() {
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+				renderer.setSize( window.innerWidth, window.innerHeight );
+			}
+			function animate() {
+				requestAnimationFrame( animate );
+				render();
+				//stats.update();
+			}
+			function render() {
+				var timer = Date.now() * 0.0005;
+				camera.position.x = 1.5;
+				camera.position.z = 1.5;
+				camera.lookAt( cameraTarget );
+				renderer.render( scene, camera );
+			}
+			}
+		</script>
+		<script>
+		var chartColors = {
+		red: 'rgb(255, 99, 132)',
+		orange: 'rgb(255, 159, 64)',
+		yellow: 'rgb(255, 205, 86)',
+		green: 'rgb(75, 192, 192)',
+		blue: 'rgb(54, 162, 235)',
+		purple: 'rgb(153, 102, 255)',
+		grey: 'rgb(201, 203, 207)'
+		};
+
+		var color = Chart.helpers.color;
+
+			var config = {
+	        type: 'line',
+	        data: {
+	            datasets: [{
+                data: [],
+								label: "data",
+								backgroundColor: color(chartColors.red).alpha(0.5).rgbString(),
+						    borderColor: chartColors.red,
+						    fill: true,
+						    lineTension: 0,
+								pointBackgroundColor: 'rgba(0, 0, 0, 0.0)',
+								pointBorderColor: 'rgba(0, 0, 0, 0.0)',
+								//pointBorderWidth: 1,
+								borderCapStyle: 'round'
+								//easing: 'easeInSine'
+
+	            }]
+	        },
+					options: {
+						title: {
+						display: true,
+						text: 'Flex Sensor'
+						},
+					scales: {
+						xAxes: [{
+							type: 'realtime'
+						}]
+						},
+            yAxes: [{
+							scaleLabel: {
+							display: true,
+							labelString: 'Flex amount'
+							}
+            }],
+						plugins: {
+						streaming: {
+						duration: 20000,
+						refresh: 1000,
+						delay: 1000,
+						}
+						}
+					}
+		};
+
+		var ws = new WebSocket("ws://192.168.1.176/ws");
+		ws.onmessage = function(event) {
+		    // append the new data to the existing chart data
+		    //myChart.data.datasets[0].data.push({
+		      myChart.config.data.datasets.forEach(function(dataset) {
+		      		dataset.data.push({
+		        x: Date.now(),
+		        y: JSON.parse(event.data)["data"]
+		    });
+		  });
+		    // update chart datasets keeping the current animation
+		    myChart.update({
+		        preservation: true
+		    });
+		}
+
+		var ctx = document.getElementById('myChart').getContext('2d');
+		myChart = new Chart(ctx, config);
+
+</script>
+		</body>
+	<body onLoad="javascript:WebSocketBegin()">
+</html>
