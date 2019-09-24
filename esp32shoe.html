@@ -14,11 +14,31 @@
 			#info {
 				color: #fff;
 				position: absolute;
-				top: 10px;
+				top: 50%;
 				width: 100%;
 				text-align: center;
 				z-index: 100;
 				display:block;
+			}
+			#steps {
+				color: #999990;
+				position: absolute;
+				top: 17%;
+				width: 100%;
+				text-align: left;
+				z-index: 100;
+				display:block;
+				padding-left: 10px;
+			}
+			#accu {
+				color: #999990;
+				position: absolute;
+				top: 20%;
+				width: 100%;
+				text-align: left;
+				z-index: 100;
+				display:block;
+				padding-left: 10px;
 			}
 			a { color: skyblue }
 			.button { background:#999; color:#eee; padding:0.2em 0.5em; cursor:pointer }
@@ -50,25 +70,30 @@
 		</style>
 	</head>
 	<body>
+
+		<div id="accu">
+		</div>
+		<div id="steps">
+		</div>
+
 		<div id="info">
 		<div class="chart-container" style="position: relative; height:10vh; width:50vw">
 		    <canvas id="myChart"></canvas>
 		</div>
 		</div>
 
-		<script src="./build/three.js"></script>
+		<script src="./JS/three.min.js"></script>
+		<script src="./JS/WebGL.js"></script>
+		<script src="./JS/moment.min.js"></script>
+		<script src="./JS/Chart.min.js"></script>
+		<script src="./JS/chartjs-plugin-streaming.min.js"></script>
+		<script src="./JS/STLLoader.js"></script>
 
+	<!--
+		<script src="./stats.min.js"></script>
 		<script src="./jsm/loaders/STLLoader.js"></script>
 
-		<script src="./WebGL.js"></script>
-
-		<script src="./moment.min.js"></script>
-		<script src="./Chart.min.js"></script>
-		<script src="./chartjs-plugin-streaming.min.js"></script>
-
-		<script src="./STLLoader.js"></script>
-
-		<script src="./stats.min.js"></script>
+	-->
 
 
 		<script>
@@ -99,7 +124,7 @@
 					plane.rotation.x = - Math.PI / 2;
 					plane.position.y = - 0.5;
 					scene.add( plane );
-					plane.receiveShadow = true;
+					plane.receiveShadow = false;
 
 
 					// ASCII file
@@ -107,7 +132,7 @@
 					loader.load( './ascii/edit3.stl', function ( geometry ) {
 					var material = new THREE.MeshPhongMaterial( { color: 0x73D04E, specular: 0x444444, shininess: 40, wireframe: true, flatShading: false, depthWrite: true, clipIntersection: false } );
 					var mesh = new THREE.Mesh( geometry, material );
-					mesh.position.set( 0, 0, 0 );
+					mesh.position.set( 0, -0.4, 0 );
 					mesh.rotation.set( 0, 0, 0 );
 					mesh.scale.set( 0.2, 0.2, 0.2 );
 					mesh.castShadow = true;
@@ -117,7 +142,7 @@
 				//Begin inserted code
 							if ("WebSocket" in window) {
 								// Let us open a web socket
-								ws = new WebSocket("ws://192.168.1.176/ws");
+								ws = new WebSocket("ws://172.20.10.6/ws");
 								// ws = new WebSocket(
 								//   "wss://fc94f91f5992989f83474cc8abf7329b-8001.husarnetusers.com"
 								// );
@@ -128,26 +153,19 @@
 									//create a JSON object
 									var jsonObject = JSON.parse(evt.data);
 									var qReal = jsonObject.q0;
-									var qI = jsonObject.q1;
-									var qJ = jsonObject.q2;
-									var qK = jsonObject.q3;
-									//var quat1 = new THREE.Quaternion(qI, qJ, qK, qReal);
-									//var quat2 = new THREE.Quaternion(1, 0, 0, 0);
-
-
+									var qK = jsonObject.q1;
+									var qI = jsonObject.q2;
+									var qJ = -jsonObject.q3;
 									var quat1 = new THREE.Quaternion(qReal, qI, qJ, qK);
-									//quat1.setFromAxisAngle( new THREE.Vector3( 0, 1, 0 ), Math.PI / 2 );
-									//var quat2 = new THREE.Vector3( 1, 0, 0 );
 									var quat2 = new THREE.Quaternion(1, 0, 0, 0);
 									mesh.quaternion.multiplyQuaternions(quat1, quat2);
 
-									//var quaternion = new THREE.Quaternion(qI, qJ, qK, qReal); quaternion.setFromAxisAngle( new THREE.Vector3( 0, 1, 0 ), Math.PI / 2 );
-									//var vector = new THREE.Vector3( 1, 0, 0 ); vector.applyQuaternion( quaternion );
+									var steps=jsonObject.steps;
+									document.getElementById('steps').innerHTML= "Steps:" + jsonObject.steps;
+									var Accu=jsonObject.accu;
+									document.getElementById('accu').innerHTML= "Accuracy:" + jsonObject.accu;
 
 
-
-									//var vector = new THREE.Vector3( 1, 0, 0 );
-									//vector.applyQuaternion( quaternion );
 
 								};
 								ws.onclose = function() {
@@ -273,7 +291,7 @@
 					}
 		};
 
-		var ws = new WebSocket("ws://192.168.1.176/ws");
+		var ws = new WebSocket("ws://172.20.10.6/ws");
 		ws.onmessage = function(event) {
 		    // append the new data to the existing chart data
 		    //myChart.data.datasets[0].data.push({
