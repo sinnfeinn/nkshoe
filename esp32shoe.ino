@@ -24,8 +24,8 @@ uint16_t handCalibration[2][2] = {
 // ---- WLAN ----
 
 // Define WLAN
-const char* ssid = "alpaca-old";
-const char* password = "testingesp32";
+const char* ssid = "YOURWIFI";
+const char* password = "YOURPASSWORD";
 
 // ---- Define time ----
 #define NTP_OFFSET   -7 * 60 * 60      // In seconds
