@@ -38,8 +38,20 @@ https://learn.adafruit.com/adafruit-huzzah32-esp32-feather/using-with-arduino-id
 </br>
 6.) Make sure you and the shoe are in the same Wifi network. 
 </br>
-7.) Download a free stl model of a shoe and place it in the ascii folder. (https://sketchfab.com/3d-models/shoe-stl-8bc37802b11240f6bad3bb3b60e682ae)
+7.) Open esp32shoe.html and change line 145 and 294 ( "ws = new WebSocket("ws://172.20.10.6/ws");" )to your esp32's wifi address 
 </br>
-8.) Open esp32shoe.html 
+8.) Download a free stl model of a shoe and place it in the ascii folder. (https://sketchfab.com/3d-models/shoe-stl-8bc37802b11240f6bad3bb3b60e682ae)
 </br>
-9.) Check  developertools/network/ws for websocket connections.
+9.) Open esp32shoe.html 
+</br>
+10.) Check developertools/network/ws for websocket connections.
+</br>
+11.) Enjoy.
+</br>
+TODO:</br>
+-- Reduce websocket connections from two to one.</br>
+-- Work on flex accuracy.</br>
+-- Reduce stl model to allower speedier movement.</br>
+-- Much more.</br>
+</br>
+
