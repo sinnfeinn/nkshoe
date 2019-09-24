@@ -27,7 +27,7 @@ Showing position and flex of a shoe wireless in realtime on the web using:
 1.) Install Arduino IDE and follow the instructions to setup the esp32 feather board:
 https://learn.adafruit.com/adafruit-huzzah32-esp32-feather/using-with-arduino-ide
 </br>
-2.) Install all the required libraries from above (Software/ESP32) 
+2.) Install all the required libraries from above. (Software/ESP32)
 </br>
 3.) Change the Wifi Credentials to your home wifi.
 </br>
