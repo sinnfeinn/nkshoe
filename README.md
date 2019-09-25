@@ -1,7 +1,7 @@
 # nkshoe
 </br>
 </br>
-## Building a position and flex aware shoe that connects wirelessly in realtime to the web.
+Building a position and flex aware shoe that connects wirelessly in realtime to the web.
 </br>
 ![](position.gif)
 </br>
