@@ -4,29 +4,31 @@
 Building a position and flex aware shoe that connects wirelessly in realtime to the web.</br>
 
 </br>
-<img src="http://www.andreaskadenbach.com/img/web.png" alt="esp32shoe web">
+<img src="http://www.andreaskadenbach.com/img/web.png" alt="esp32shoe web"></img>
+![](position.gif)
+![](flex.gif)
 </br>
-- Hardware:</br>
---- esp32 (https://www.sparkfun.com/products/14689)</br>
---- IMU (https://www.sparkfun.com/products/14686)</br>
---- flexsensor (https://www.sparkfun.com/products/14666)</br>
+Hardware:</br>
+- esp32 (https://www.sparkfun.com/products/14689)</br>
+- IMU (https://www.sparkfun.com/products/14686)</br>
+- flexsensor (https://www.sparkfun.com/products/14666)</br>
 </br>
-- Software:</br>
--- ESP32:</br>
---- Arduino IDE (https://www.arduino.cc/en/main/software)</br>
---- Websockets (https://github.com/Links2004/arduinoWebSockets)</br>
---- ArduinoJson (https://arduinojson.org/?utm_source=meta&utm_medium=library.properties)</br>
---- SparkFun ADS1015 Arduino Library (https://github.com/sparkfun/SparkFun_ADS1015_Arduino_Library)</br>
---- SparkFun BNO080 Arduino Library (https://github.com/sparkfun/SparkFun_BNO080_Arduino_Library)</br>
---- NTPClient (https://github.com/arduino-libraries/NTPClient)</br>
+Software:</br>
+- ESP32:</br>
+- Arduino IDE (https://www.arduino.cc/en/main/software)</br>
+- Websockets (https://github.com/Links2004/arduinoWebSockets)</br>
+- ArduinoJson (https://arduinojson.org/?utm_source=meta&utm_medium=library.properties)</br>
+- SparkFun ADS1015 Arduino Library (https://github.com/sparkfun/SparkFun_ADS1015_Arduino_Library)</br>
+- SparkFun BNO080 Arduino Library (https://github.com/sparkfun/SparkFun_BNO080_Arduino_Library)</br>
+- NTPClient (https://github.com/arduino-libraries/NTPClient)</br>
 </br>
--- Web:</br>
---- html/css</br>
---- Three JS (https://www.threejs.org)</br>
---- Moment JS (https://momentjs.com/)</br>
---- Chart JS (https://www.chartjs.org/)</br>
---- Chart Streaming Plugin (https://nagix.github.io/chartjs-plugin-streaming/)</br>
---- Free stl show model (https://sketchfab.com/3d-models/shoe-stl-8bc37802b11240f6bad3bb3b60e682ae#download)
+Web:</br>
+- html/css</br>
+- Three JS (https://www.threejs.org)</br>
+- Moment JS (https://momentjs.com/)</br>
+- Chart JS (https://www.chartjs.org/)</br>
+- Chart Streaming Plugin (https://nagix.github.io/chartjs-plugin-streaming/)</br>
+- Free stl show model (https://sketchfab.com/3d-models/shoe-stl-8bc37802b11240f6bad3bb3b60e682ae#download)
 </br>
 </br>
 ## Building instructions:
