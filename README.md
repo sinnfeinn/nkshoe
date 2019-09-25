@@ -1,10 +1,8 @@
 # nkshoe
-</br>
-</br>
-Building a position and flex aware shoe that connects wirelessly in realtime to the web.</br>
 
-</br>
-<img src="http://www.andreaskadenbach.com/img/web.png" alt="esp32shoe web"></img>
+Building a position and flex aware shoe that connects wirelessly in realtime to the web.
+
+![esp32shoe](web.png)
 ![](position.gif)
 ![](flex.gif)
 </br>
@@ -59,7 +57,7 @@ If the model is to small or too big change line 137 in esp32shoe.html.
 11.) Enjoy.
 </br>
 </br>
-## TODO:</br>
+TODO:</br>
 -- Reduce websocket connections from two to one.</br>
 -- Work on flex accuracy.</br>
 -- Reduce stl model to allower speedier movement.</br>
