@@ -1,20 +1,18 @@
 # nkshoe
 </br>
 </br>
-Building a position and flex aware shoe that connects wirelessly in realtime to the web.
+Building a position and flex aware shoe that connects wirelessly in realtime to the web.</br>
+
 </br>
-![](position.gif)
+<img src="http://www.andreaskadenbach.com/img/web.png" alt="esp32shoe web">
 </br>
-![](flex.gif)</br>
- <img src="http://www.andreaskadenbach.com/img/web.png" alt="esp32shoe web">
-</br>
-### Hardware:</br>
+- Hardware:</br>
 --- esp32 (https://www.sparkfun.com/products/14689)</br>
 --- IMU (https://www.sparkfun.com/products/14686)</br>
 --- flexsensor (https://www.sparkfun.com/products/14666)</br>
 </br>
-### Software:</br>
---ESP32:</br>
+- Software:</br>
+-- ESP32:</br>
 --- Arduino IDE (https://www.arduino.cc/en/main/software)</br>
 --- Websockets (https://github.com/Links2004/arduinoWebSockets)</br>
 --- ArduinoJson (https://arduinojson.org/?utm_source=meta&utm_medium=library.properties)</br>
@@ -22,7 +20,7 @@ Building a position and flex aware shoe that connects wirelessly in realtime to 
 --- SparkFun BNO080 Arduino Library (https://github.com/sparkfun/SparkFun_BNO080_Arduino_Library)</br>
 --- NTPClient (https://github.com/arduino-libraries/NTPClient)</br>
 </br>
---Web:</br>
+-- Web:</br>
 --- html/css</br>
 --- Three JS (https://www.threejs.org)</br>
 --- Moment JS (https://momentjs.com/)</br>
