@@ -5,7 +5,7 @@
 ![esp32shoe](web.png)
 ![](position.gif)
 ![](flex.gif)
-</br>
+  
 ## - Hardware:  
  - esp32 (https://www.sparkfun.com/products/14689)  
  - IMU (https://www.sparkfun.com/products/14686)  
