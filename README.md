@@ -65,6 +65,7 @@ If the model is to small or too big change line 137 in esp32shoe.html.
 - [ ] Work on flex accuracy.  
 - [ ] Reduce stl model to allower speedier movement.  
 - [ ] Add calibration to imu and flex sensor.  
+- [ ] Use CDN for js libraries.  
 - [ ] Much more.  
   
 
