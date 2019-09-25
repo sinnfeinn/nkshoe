@@ -1,17 +1,19 @@
-# nkshoe</br>
-Building a position and flex aware shoe that connects wirelessly in realtime to the web.
+# nkshoe
+</br>
+</br>
+## Building a position and flex aware shoe that connects wirelessly in realtime to the web.
 </br>
 ![](position.gif)
 </br>
 ![](flex.gif)</br>
  <img src="http://www.andreaskadenbach.com/img/web.png" alt="esp32shoe web">
 </br>
--Hardware:</br>
+### Hardware:</br>
 --- esp32 (https://www.sparkfun.com/products/14689)</br>
 --- IMU (https://www.sparkfun.com/products/14686)</br>
 --- flexsensor (https://www.sparkfun.com/products/14666)</br>
 </br>
--Software:</br>
+### Software:</br>
 --ESP32:</br>
 --- Arduino IDE (https://www.arduino.cc/en/main/software)</br>
 --- Websockets (https://github.com/Links2004/arduinoWebSockets)</br>
@@ -27,6 +29,9 @@ Building a position and flex aware shoe that connects wirelessly in realtime to 
 --- Chart JS (https://www.chartjs.org/)</br>
 --- Chart Streaming Plugin (https://nagix.github.io/chartjs-plugin-streaming/)</br>
 --- Free stl show model (https://sketchfab.com/3d-models/shoe-stl-8bc37802b11240f6bad3bb3b60e682ae#download)
+</br>
+</br>
+## Building instructions:
 </br>
 </br>
 1.) Install Arduino IDE and follow the instructions to setup the esp32 feather board:
@@ -54,7 +59,7 @@ If the model is to small or too big change line 137 in esp32shoe.html.
 11.) Enjoy.
 </br>
 </br>
-TODO:</br>
+## TODO:</br>
 -- Reduce websocket connections from two to one.</br>
 -- Work on flex accuracy.</br>
 -- Reduce stl model to allower speedier movement.</br>
