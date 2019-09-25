@@ -1,7 +1,13 @@
 # nkshoe</br>
 Showing position and flex of a shoe wireless in realtime on the web using:
 </br>
- <img src="http://www.andreaskadenbach.com/img/shoeimu.gif" alt="esp32shoe">
+ <img src="http://www.andreaskadenbach.com/img/postition.gif" alt="esp32shoe position">
+</br>
+ <img src="http://www.andreaskadenbach.com/img/flex.gif" alt="esp32shoe flex">
+</br>
+ <img src="http://www.andreaskadenbach.com/img/web.png" alt="esp32shoe web">
+</br>
+ <img src="http://www.andreaskadenbach.com/img/esp32shoe.JPG" alt="esp32shoe">
 </br>
 -Hardware:</br>
 --- esp32 (https://www.sparkfun.com/products/14689)</br>
