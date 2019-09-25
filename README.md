@@ -12,7 +12,7 @@
  - flexsensor (https://www.sparkfun.com/products/14666)  
   
 ## Software:  
- - ESP32:  
+ ESP32:  
   - Arduino IDE (https://www.arduino.cc/en/main/software)  
   - Websockets (https://github.com/Links2004/arduinoWebSockets)  
   - ArduinoJson (https://arduinojson.org/?utm_source=meta&utm_medium=library.properties)  
@@ -20,7 +20,7 @@
   - SparkFun BNO080 Arduino Library (https://github.com/sparkfun/SparkFun_BNO080_Arduino_Library)  
   - NTPClient (https://github.com/arduino-libraries/NTPClient)</br>
   
- - Web:  
+ Web:  
   - html/css  
   - Three JS (https://www.threejs.org)  
   - Moment JS (https://momentjs.com/)  
