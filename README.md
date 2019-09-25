@@ -21,7 +21,7 @@
 - NTPClient (https://github.com/arduino-libraries/NTPClient)</br>
   
 ## Web:  
-- html/css</br>
+- html/css  
 - Three JS (https://www.threejs.org)  
 - Moment JS (https://momentjs.com/)  
 - Chart JS (https://www.chartjs.org/)  
