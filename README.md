@@ -1,5 +1,5 @@
 # nkshoe</br>
-Showing position and flex of a shoe wireless in realtime on the web using:
+Building a position and flex aware shoe that connects wirelessly in realtime to the web.
 </br>
 ![](position.gif)
 </br>
