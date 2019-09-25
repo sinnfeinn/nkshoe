@@ -1,17 +1,17 @@
 # nkshoe
 
-Building a position and flex aware shoe that connects wirelessly in realtime to the web.
+## Building a position and flex aware shoe that connects wirelessly in realtime to the web.
 
 ![esp32shoe](web.png)
 ![](position.gif)
 ![](flex.gif)
 </br>
-Hardware:</br>
+## Hardware:</br>
 - esp32 (https://www.sparkfun.com/products/14689)</br>
 - IMU (https://www.sparkfun.com/products/14686)</br>
 - flexsensor (https://www.sparkfun.com/products/14666)</br>
 </br>
-Software:</br>
+## Software:</br>
 - ESP32:</br>
 - Arduino IDE (https://www.arduino.cc/en/main/software)</br>
 - Websockets (https://github.com/Links2004/arduinoWebSockets)</br>
@@ -20,7 +20,7 @@ Software:</br>
 - SparkFun BNO080 Arduino Library (https://github.com/sparkfun/SparkFun_BNO080_Arduino_Library)</br>
 - NTPClient (https://github.com/arduino-libraries/NTPClient)</br>
 </br>
-Web:</br>
+## Web:</br>
 - html/css</br>
 - Three JS (https://www.threejs.org)</br>
 - Moment JS (https://momentjs.com/)</br>
@@ -57,7 +57,7 @@ If the model is to small or too big change line 137 in esp32shoe.html.
 11.) Enjoy.
 </br>
 </br>
-TODO:</br>
+## TODO:</br>
 -- Reduce websocket connections from two to one.</br>
 -- Work on flex accuracy.</br>
 -- Reduce stl model to allower speedier movement.</br>
