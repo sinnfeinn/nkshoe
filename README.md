@@ -53,6 +53,7 @@ If the model is to small or too big change line 137 in esp32shoe.html.
 </br>
 11.) Enjoy.
 </br>
+</br>
 TODO:</br>
 -- Reduce websocket connections from two to one.</br>
 -- Work on flex accuracy.</br>
