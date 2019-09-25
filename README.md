@@ -2,9 +2,9 @@
 
 ## Building a position and flex aware shoe that connects wirelessly in realtime to the web.  
 
-![esp32shoe](web.png)
-![](position.gif)
-![](flex.gif)
+![esp32shoe](images/web.png)
+![](images/position.gif)
+![](images/flex.gif)
   
 ## Hardware:  
  - esp32 - SparkFun Thing Plus - ESP32 WROOM (https://www.sparkfun.com/products/14689)  
