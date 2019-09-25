@@ -6,8 +6,6 @@ Showing position and flex of a shoe wireless in realtime on the web using:
 ![](flex.gif)</br>
  <img src="http://www.andreaskadenbach.com/img/web.png" alt="esp32shoe web">
 </br>
- <img src="http://www.andreaskadenbach.com/img/esp32shoe.JPG" alt="esp32shoe">
-</br>
 -Hardware:</br>
 --- esp32 (https://www.sparkfun.com/products/14689)</br>
 --- IMU (https://www.sparkfun.com/products/14686)</br>
