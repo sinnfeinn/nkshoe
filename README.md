@@ -37,7 +37,8 @@ https://learn.adafruit.com/adafruit-huzzah32-esp32-feather/using-with-arduino-id
   
 3.) Open esp32shoe.ino and change the Wifi Credentials to your home wifi on line 27 and 28. 
   
-4.) Change the board definitions in Arduino IDE to adafruit esp32 feather and upload the sketch. (select baud speed 921600/80/none)  
+4.) Change the board definitions in Arduino IDE to adafruit esp32 feather and upload the sketch.  
+(select baud speed 921600/80/none)  
   
 5.) Open Google Chrome or Mozilla Firefox with CORS disabled.  
 (See: https://medium.com/@siddhartha.ng/disable-cross-origin-on-chrome-for-localhost-c644b131db19)  
