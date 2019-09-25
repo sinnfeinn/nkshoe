@@ -7,9 +7,9 @@
 ![](flex.gif)
   
 ## Hardware:  
- - esp32 (https://www.sparkfun.com/products/14689)  
- - IMU (https://www.sparkfun.com/products/14686)  
- - flexsensor (https://www.sparkfun.com/products/14666)  
+ - esp32 - SparkFun Thing Plus - ESP32 WROOM (https://www.sparkfun.com/products/14689)  
+ - IMU - SparkFun BNO080 (https://www.sparkfun.com/products/14686)  
+ - flexsensor - SparkFun Qwiic Flex Glove Controller (https://www.sparkfun.com/products/14666)  
   
 ## Software:  
  ESP32:  
