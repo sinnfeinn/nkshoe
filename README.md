@@ -45,7 +45,8 @@ https://learn.adafruit.com/adafruit-huzzah32-esp32-feather/using-with-arduino-id
   
 7.) Open esp32shoe.html and change line 145 and 294  ```ws = new WebSocket("ws://172.20.10.6/ws");``` to your esp32's ip address.
   
-8.) Download a free stl model of a shoe and place it in the ascii folder.  (https://sketchfab.com/3d-models/shoe-stl-8bc37802b11240f6bad3bb3b60e682ae)  If its a different model rename it to SHOE_STL.stl or change line 132 in esp32shoe.html.  
+8.) Download a free stl model of a shoe and place it in the ascii folder.  
+(https://sketchfab.com/3d-models/shoe-stl-8bc37802b11240f6bad3bb3b60e682ae)  If its a different model rename it to SHOE_STL.stl or change line 132 in esp32shoe.html.  
 If the model is to small or too big change line 137 in esp32shoe.html.
   
 9.) Open esp32shoe.html 
