@@ -18,7 +18,7 @@
   - ArduinoJson (https://arduinojson.org/?utm_source=meta&utm_medium=library.properties)  
   - SparkFun ADS1015 Arduino Library (https://github.com/sparkfun/SparkFun_ADS1015_Arduino_Library)  
   - SparkFun BNO080 Arduino Library (https://github.com/sparkfun/SparkFun_BNO080_Arduino_Library)  
-  - NTPClient (https://github.com/arduino-libraries/NTPClient)</br>
+  - NTPClient (https://github.com/taranais/NTPClient)</br>
   
  Web:  
   - html/css  
