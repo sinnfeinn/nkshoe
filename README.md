@@ -1,6 +1,6 @@
 # nkshoe
 
-## Building a position and flex aware shoe that connects wirelessly in realtime to the web.  
+## Building a position and flex aware shoe that connects wirelessly to the web in realtime.  
 
 ![esp32shoe](images/web.png)
 ![](images/position.gif)
